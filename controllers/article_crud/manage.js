@@ -83,7 +83,7 @@ exports.writeArticlePOST = async function (req, res, next) {
 			url: '/add_link_to_sitemap',
 			data: {url: 'http://www.4fromatoz.com/posts/'+articleContent.urlId},
 			headers: {},
-			baseUrl: 'http://localhost:2000',
+			baseUrl: '134.209.156.163:2000',
 		}).catch(errHandler);
 	}
 	if (req.files) {
@@ -114,7 +114,7 @@ exports.writeArticlePOST = async function (req, res, next) {
 			 */
 			const totalImages = await ArticleImage.count().catch(errHandler);
 			function imageUrl () {
-				let hostUrl = 'http://localhost:2001/uploads/image/';
+				let hostUrl = 'http://134.209.156.163:2001/uploads/image/';
 				return hostUrl + totalImages + '.jpg';
 			}
 			let originalDir = './public/uploads/' + x() + '/' + fileName
