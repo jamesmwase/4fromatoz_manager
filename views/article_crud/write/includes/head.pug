@@ -1,0 +1,31 @@
+title= title
+include ../../../common_includes/head_elements.pug
+link(rel='stylesheet', href='/css/index/style.css')
+link(href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js")
+//link(rel='stylesheet', href="/css/lib/bulma-tagsinput.min.css")
+//script(type="text/javascript" src="/css/lib/bulma-tagsinput.min.js")
+//- nicEdit library
+//script(type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js")
+script(type="text/javascript" src="/js/lib/nicEdit/nicEdit.js")
+script(type="text/javascript").
+   //<![CDATA[
+   // bkLib.onDomLoaded(function() { nicEditors.allTextAreas(); });
+   //]]>
+  // activating nicEdit text editor
+  var area1;
+  function toggleArea1 () {
+    area1 = new nicEditor({fullPanel : true}).panelInstance('articleBody',{hasPanel : true});
+  }
+  // deactivating nicEdit text editor
+  function removeArea1 () {
+    area1.removeInstance('articleBody');
+  }
+  // activate nicEdit while the dom loads 
+  bkLib.onDomLoaded(function() { toggleArea1() });
+  
+  // activate bulma-tagsinput extension for bulma framework
+  // bulmaTagsinput.attach();
+  
+  
+  

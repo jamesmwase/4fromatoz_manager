@@ -1,0 +1,7 @@
+#crud_btns {
+  margin: auto;
+}
+#crud_btns .button {
+  color: #fff;
+  text-transform: capitalize;
+}

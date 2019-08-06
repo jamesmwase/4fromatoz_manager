@@ -1,0 +1,75 @@
+extends layout
+block content
+  include ../../common_features/navbar.pug
+  div#global-wrapper.content
+    div.columns
+      div.column.is-2
+        include ../../common_features/menu.pug
+      div#middle-content.column.is-7
+        form#article-form.section(method="POST" action="/articles/write/save" enctype="multipart/form-data")
+          h1| write an article
+          h1#warning-msg
+          div.columns
+            div.column.is-3
+              label.label| category
+              span.control
+                span.select.is-small
+                  select#category-selection(name="category" required)
+                    option(value="")| 
+                    each category, i in categories
+                      option(value= category.category)= category.category
+            div.column.is-5
+              label.label| visibility mode
+              span.control
+                span.select.is-small
+                  select(name="visible")
+                    option(value="1")| visible
+                    option(value="0")| hidden
+          div.columns
+            div.column.is-5
+              label.label| any computer code in this post?
+              span.control
+                span.select.is-small
+                  select(name="hasCode")
+                    option(value="0")| has no computer code
+                    option(value="1")| contains computer code
+          
+          div#tag-selection-wrapper(style="margin: .8rem auto; display: none;")
+            label.label| select tags or sub categories for this post
+            select#tag-selection(class="article-tag-selection" name="tags" value
+            ="[]" multiple="multiple" style="width: 100%;") 
+          
+          div(style="margin: .8rem auto;")
+            label.label| Article main title
+            span.control
+              input.spell-check.input.is-small(name="title" required)
+          div.columns
+            div.column.is-5
+              div(style="margin: .8rem auto;")
+                label.label| Fill in Cover Image
+                span.control
+                  input.is-small(name="new_upload" type="file" required)
+            div.column.is-6
+              div(style="margin: .8rem auto;")
+                label.label| Image description
+                span.control
+                  input.input.spell-check(name="imageALT" placeholder="eg: Image of a Car, Picture of a girl" required)
+                
+          div(style="margin: .8rem auto;")
+            label.label.spell-check| meta description
+            span.control
+              textarea.spell-check.textarea(name="metaDescription" required)
+          div(style="margin: .8rem auto;")
+            label.label.spell-check| article`s informative introduction text
+            span.control
+              textarea.spell-check.textarea(name="intro")
+          div
+            textarea#articleBody(name="body" style="width: 100%; height: 300px;")|
+          div(style="margin-top: 1rem;")
+            button#submit-article.button.is-dark.is-fullwidth(type="submit")| Submit Article
+          
+            
+      include ../../common_features/rightbar.pug
+    script(type='text/javascript' src='/JavaScriptSpellCheck/include.js')            
+    script(type="text/javascript" src="/js/common-features.js")
+    script(type="text/javascript" src="/js/article/write.js")

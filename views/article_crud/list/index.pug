@@ -1,0 +1,23 @@
+extends layout
+block content
+  include ../../common_features/navbar.pug
+  div#global-wrapper.content
+    div.columns
+      div.column.is-2
+        include ../../common_features/menu.pug
+      div.column.is-7(style="background: #fff;")
+        h2| List of Articles
+        each article, i in articles
+          div.columns
+            div.column.is-12
+              a(href="/articles/view/" + article.urlId)
+                h5.has-text-info= article.title
+              p= article.intro
+              div#crud_btns
+                a.button.is-small.is-info(href="/articles/view/" + article.urlId)| view
+                a.button.is-small.is-warning(href="/articles/edit/" + article.urlId)| edit
+                a.button.is-small.is-danger(href="/articles/delete/" + article.urlId)| delete
+        
+      include ../../common_features/rightbar.pug
+            
+    script(type="text/javascript" src="/js/common-features.js")

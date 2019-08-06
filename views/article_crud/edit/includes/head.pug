@@ -1,0 +1,33 @@
+title= title
+include ../../../common_includes/head_elements.pug
+link(rel='stylesheet', href='/css/index/style.css')
+//- markItUp library
+// script(src="https:/ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js")
+  script(src="/js/lib/markitup/jquery.markitup.js")
+  script(src="/js/lib/markitup/sets/default/set.js")
+  link(rel="stylesheet" href="/js/lib/markitup/skins/simple/style.css")
+  link(rel="stylesheet" href="/js/lib/markitup/sets/default/style.css")
+  $(document).ready(function() {
+     $("#markItUp").markItUp();
+  });
+//- nicEdit library
+script(type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js")
+//script(type="text/javascript" src="/js/lib/nicEdit/nicEdit.js")
+script(type="text/javascript").
+   //<![CDATA[
+   // bkLib.onDomLoaded(function() { nicEditors.allTextAreas(); });
+   //]]>
+  // activating nicEdit text editor
+  var area1;
+  function toggleArea1 () {
+    area1 = new nicEditor({fullPanel : true}).panelInstance('articleBody',{hasPanel : true});
+  }
+  // deactivating nicEdit text editor
+  function removeArea1 () {
+    area1.removeInstance('articleBody');
+  }
+  // activate nicEdit while the dom loads 
+  bkLib.onDomLoaded(function() { toggleArea1() });
+  
+  
+  

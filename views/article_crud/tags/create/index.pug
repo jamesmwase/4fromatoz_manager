@@ -1,0 +1,35 @@
+extends layout
+block content
+  include ../../../common_features/navbar.pug
+  div#global-wrapper.content
+    div.columns
+      div.column.is-2
+        include ../../../common_features/menu.pug
+      div#middle-content.column.is-7
+        form.section(method="POST" action="/articles/tags/add" enctype="multipart/form-data")
+          h1| Create new tag for article identification
+          div.columns
+            div.column.is-3
+              label.label| category
+              span.control
+                span.select.is-small
+                  select(name="category")
+                    option(value="")| 
+                    each category, i in categories
+                      option(value= category.category)= category.category
+          
+          div(style="margin: .8rem auto;")
+            label.label| tag name
+            span.control
+              input.input.is-small(name="tag")
+          
+          div(style="margin-top: 1rem;")
+            span#submit-tag.button.is-dark.is-fullwidth
+              i(style="margin-right: .2rem;").fas.fa-plus-circle
+              span| Add Tag
+          
+            
+      include ../../../common_features/rightbar.pug
+                
+      script(type="text/javascript" src="/js/common-features.js")
+    script(type="text/javascript" src="/js/article/tags/add.js")

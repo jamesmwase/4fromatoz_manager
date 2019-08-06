@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  body.content
+    div#global-wrapper  
+      div#form-content
+        form(method="POST" action="/create_account")
+          p#err-message.has-background-danger.has-text-white(style="padding: 1px 10px; display: none;")
+            b|
+          h4.has-text-centered| Create Account
+          div.field
+            label.label.is-small| first name
+            p.control.has-icons-right
+              input.input.is-small(type="firstName" name="fname")
+              span.icon.is-small.is-right
+                i.fas.fa-check
+                  
+          div.field
+            label.label.is-small| last name
+            p.control.has-icons-right
+              input.input.is-small(type="lastName" name="lname")
+              span.icon.is-small.is-right
+                i.fas.fa-check
+          
+          div.field
+            label.label.is-small| birthdate
+            p.control.has-icons-right
+              input#birthdate.input.is-small(type="date" name="birthDate" placeholder="Your birthdate" required)
+              span.icon.is-small.is-right
+                i.fas.fa-check
+          
+          div.field
+            label.label.is-small| sex
+            p.control.is-expanded
+              span.select.is-small.is-fullwidth
+                select(name="sex" required)| Choose your sex
+                  option(value="")|
+                  option(value="male")| Male
+                  option(value="female")| Female
+                  
+          div.field
+            label.label.is-small| email
+            p.control.has-icons-right
+              input.input.is-small(type="email" name="contact" placeholder="Email" required)
+              span.icon.is-small.is-right
+                i.fas.fa-check
+          
+          div.field
+            label.label.is-small| password
+            p.control
+              input.input.is-small(type="password" name="password" placeholder="Password")
+          
+          div.field
+            label.label.is-small| comfirm password
+            p.control
+              input.input.is-small(type="password" name="comfirmPassword" placeholder="Password")
+          
+          div.field
+            p.control
+              span#submit-btn.button.is-success.is-small| Submit
+    include includes/scripts.pug
+      

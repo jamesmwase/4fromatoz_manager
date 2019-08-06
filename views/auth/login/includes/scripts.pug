@@ -1,0 +1,28 @@
+script.
+  $(window).click(function (e) {
+    if (e.target.matches('#submit-btn')) {
+      var actionUrl = window.location;
+      $('#submit-btn').addClass('is-loading');
+      $.ajax({
+        url: actionUrl,
+        type: 'post',
+        dataType: 'json',
+        data: $('form').serialize(),
+        success: async function (data, status) {
+          setTimeout( function () {
+            switch (data) {
+              case 'success':
+                $('#submit-btn').text('').removeClass('is-loading').addClass('is-success is-outlined fas fa-check has-text-success')
+                window.location.assign('/')
+                break;
+              case 'wrong_credentials':
+                $('#err-message').css('display', 'block')
+                $('#err-message b').text('You entered wrong credentials!');
+                $('#submit-btn').removeClass('is-loading').text('Submit Again');
+                break;
+            }
+          }, 2000)
+        }
+      });
+    }
+  })

@@ -1,0 +1,15 @@
+#form-content {
+   width: 400px;
+   margin: auto;
+   background-color: #fff;
+   padding: 15px;
+   border-radius: 5px;
+ }
+#submit-btn {
+  display: block;
+  margin: auto;
+  padding: 5px 20px;
+}
+#global-wrapper  {
+  margin: 8rem;
+}

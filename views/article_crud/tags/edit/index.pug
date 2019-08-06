@@ -1,0 +1,26 @@
+extends layout
+block content
+  include ../../../common_features/navbar.pug
+  div#global-wrapper.content
+    div.columns
+      div.column.is-2
+        include ../../../common_features/menu.pug
+      div#middle-content.column.is-7
+        form.section(method="POST" action="/articles/category/edit/" + tag.id enctype="multipart/form-data")
+          h1| Create new Category for article identification
+          
+          div(style="margin: .8rem auto;")
+            label.label| tag name
+            span.control
+              input.input.is-small(name="category" value= tag.tag)
+          
+          div(style="margin-top: 1rem;")
+            button#submit-category.button.is-dark.is-fullwidth
+              i(style="margin-right: .2rem;").fas.fa-plus-circle
+              span| Update Tag
+          
+            
+      include ../../../common_features/rightbar.pug
+                
+      script(type="text/javascript" src="/js/common-features.js")
+    script(type="text/javascript" src="/js/article/categories/add.js")

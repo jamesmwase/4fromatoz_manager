@@ -1,0 +1,35 @@
+{
+  "name": "4fromatoz_manager",
+  "version": "1.0.0",
+  "description": "App manager for 4fromatoz Blogging web app, topics include: IT, programming and many more.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Mwase",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "dompurify": "^1.0.11",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "express-session": "^1.16.2",
+    "helmet": "^3.19.0",
+    "http-errors": "^1.7.3",
+    "jimp": "^0.6.4",
+    "jsdom": "^15.1.1",
+    "machinepack-http": "^8.0.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
+    "nodemailer": "^6.3.0",
+    "pug": "^2.0.4",
+    "sequelize": "^5.12.3",
+    "string": "^3.3.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.5.0"
+  }
+}

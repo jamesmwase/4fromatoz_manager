@@ -1,0 +1,13 @@
+extends layout
+block content
+  include ../common_features/navbar.pug
+  div#global-wrapper.content
+    div.columns
+      div.column.is-2
+        include ../common_features/menu.pug
+      
+      div.column.is-7
+      
+      include ../common_features/rightbar.pug
+                
+    script(type="text/javascript" src="/js/common-features.js")

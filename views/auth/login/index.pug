@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  body.content
+    div#global-wrapper  
+      div#form-content
+        form(method="POST" action="/login")
+          p#err-message.has-background-danger.has-text-white(style="padding: 1px 10px; display: none;")
+            b|
+          div.field
+            h4.has-text-centered.is-small| Enter Credentials
+            p.control.has-icons-left.has-icons-right
+              input.input.is-small(type="email" name="contact" placeholder="Email")
+              span.icon.is-small.is-left
+                i.fas.fa-user
+              
+              span.icon.is-small.is-right
+                i.fas.fa-check
+              
+          
+          div.field
+            p.control.has-icons-left
+              input.input.is-small(type="password" name="password" placeholder="Password")
+              span.icon.is-small.is-left
+                i.fas.fa-lock
+          div.field
+            p.control
+              span#submit-btn.button.is-success.is-small| Login
+    include includes/scripts.pug

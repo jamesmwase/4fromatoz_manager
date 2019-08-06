@@ -1,0 +1,24 @@
+extends layout
+block content
+  include ../../../common_features/navbar.pug
+  div#global-wrapper.content
+    div.columns
+      div.column.is-2
+        include ../../../common_features/menu.pug
+      div.column.is-7(style="background: #fff;")
+        h2| Category Manager
+        p
+          a.button.is-success(href="/articles/category/add")
+            i.fas.fa-plus-circle
+            span| Add new category
+        each category, i in categories
+          div.columns
+            div.column.is-12
+              h5.has-text-info= category.category
+              div#crud_btns
+                a.button.is-small.is-warning(href="/articles/category/edit/" + category.id)| edit
+                a.button.is-small.is-danger(href="/articles/category/delete/" + category.id)| delete
+        
+      include ../../../common_features/rightbar.pug
+            
+    script(type="text/javascript" src="/js/common-features.js")

@@ -1,0 +1,35 @@
+script.
+  //flatpickr(document.getElementById('birthdate', {}))
+  $(window).click(function (e) {
+    if (e.target.matches('#submit-btn')) {
+      /*let inputs = document.getElementsByTagName('input');
+      function valid_Form () {
+        let i, inpL
+        inpL = inputs.length;
+      }
+      valid_Form()*/
+      var actionUrl = window.location;
+      $('#submit-btn').addClass('is-loading');
+      $.ajax({
+        url: actionUrl,
+        type: 'post',
+        dataType: 'json',
+        data: $('form').serialize(),
+        success: async function (data, status) {
+          setTimeout( function () {
+            switch (data) {
+              case 'success':
+                $('#submit-btn').text('').text('').removeClass('is-loading').addClass('is-success is-outlined fas fa-check has-text-success')
+                window.location.assign('/login')
+                break;
+              case 'duplicate_email':
+                $('#err-message').css('display', 'block')
+                $('#err-message b').text('User with same email address already exists!');
+                $('#submit-btn').removeClass('is-loading').text('Submit Again');
+                break;
+            }
+          }, 2000)
+        }
+      });
+    }
+  })
