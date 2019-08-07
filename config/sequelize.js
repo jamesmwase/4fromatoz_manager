@@ -14,7 +14,6 @@ switch (process.env.NODE_ENV) {
   default:
     console.log(process.env.NODE_ENV);
     break;
-
 }
 exports.sequelize = new Sequelize('fromatoz_root', 'root', 'skdi_^&)98w8HGAS', {
   host: 'localhost',
