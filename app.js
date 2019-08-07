@@ -94,11 +94,12 @@ for (var k in interfaces) {
         }
     }
 }
-console.log('- Network address: ' + chalk.cyan('http://' + addresses[0] + ':' + chalk.green(port) + '/'));
 
 const port = 81;
 app.listen(port, function() {
 	console.log('app listening on ' + chalk.green(port) + '...');
 })
+
+console.log('- Network address: ' + chalk.cyan('http://' + addresses[0] + ':' + chalk.green(port) + '/'));
 
 module.exports = app;
