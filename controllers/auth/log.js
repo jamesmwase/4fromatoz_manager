@@ -52,6 +52,6 @@ exports.loginPOST = async function (req, res, next) {
 	}
 }
 exports.logout = function (req, res, next) {
-  req.session.user = {};
+  req.session.user = false;
   res.redirect('/login')
 }
