@@ -24,4 +24,4 @@ exports.sequelize = new Sequelize($CURRENT_DATABASE, 'root', 'skdi_^&)98w8HGAS',
   host: 'localhost',
   dialect: 'mysql'
 });
-console.console.log('CURRENT DATABASE NAME: ' + $CURRENT_DATABASE);
+console.log('CURRENT DATABASE NAME: ' + $CURRENT_DATABASE);
