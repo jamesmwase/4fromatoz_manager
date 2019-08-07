@@ -10,6 +10,9 @@ const createError = require('http-errors')
 , upload = require('express-fileupload')
 ;
 
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+
 var siteRouter = require('./routes/site');
 
 //databases
@@ -39,16 +42,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* Express-Session middleware */
 app.use(session({
+  store: new RedisStore(options),
   secret: 'sj*&8s7ydw3hedGUFYTDTD^r^%4^%$^&*TGKHTU^R76T*&TyYTYTutuTULILOoj(*&^*5$#$#)+_)(*&)', // the secret needs to be random unreadable characters.. check soon!!!!!
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: { maxAge: 180 * 60 * 1000 }
 }));
-
-//Express-Messages middleware
-// app.use((req, res, next) => {
-//   res.locals.messages = require('express-messages')(req, res);
-//   next();
-// })
+app.use(function (req, res, next) {
+  if (!req.session) {
+    return next(new Error('oh no')) // handle error
+  }
+  next() // otherwise continue
+})
 
 app.use('', siteRouter);
 

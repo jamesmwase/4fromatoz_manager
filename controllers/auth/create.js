@@ -40,7 +40,7 @@ exports.createUserPOST = async function (req, res, next) {
 		req.body.password = hashedPassword;
     var properDate = S(DOMPurify.sanitize(req.body.birthDate, {ALLOWED_TAGS: []})).trim().toString();
     var birthDate = new Date(properDate);
-    let randomChars = Math.random().toString(36).substring(1);
+    let randomChars = Math.random().toString(36).substring(2);
     var newUser = {
       birthDate: birthDate
       , fname: S(DOMPurify.sanitize(req.body.fname, {ALLOWED_TAGS: []})).trim().toString()
