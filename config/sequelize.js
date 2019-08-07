@@ -4,19 +4,22 @@ const express = require('express')
 
 const app = express();
 
-// Option 1: Passing parameters separately
+/**
+ * Connect to a database according to the current node environment e.g. production, test or development
+ */
+ 
 var $CURRENT_DATABASE = null;
 switch (app.get('env')) {
   case 'production':
     console.log(app.get('env'));
-    $CURRENT_DATABASE = app.get('env');
+    $CURRENT_DATABASE = 'fromatoz_root';
     break;
   case 'test':
-    $CURRENT_DATABASE = app.get('env');
+    $CURRENT_DATABASE = 'fromatoz_test';
     console.log(app.get('env'));
     break;
   default: // this must be "production environment"
-    $CURRENT_DATABASE = app.get('env');
+    $CURRENT_DATABASE = 'fromatoz_development';
     console.log(app.get('env'));
     break;
 }
