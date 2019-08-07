@@ -4,8 +4,8 @@ html {
 nav#navbar {
   background-color: #000;
   width: 100%;
-  position: ;
-  top: ;
+  position: fixed;
+  top: 0;
   z-index: 1;
 }
 nav .nav-item {
