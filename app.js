@@ -8,6 +8,7 @@ const createError = require('http-errors')
 , bodyParser = require('body-parser')
 , bcrypt = require('bcryptjs')
 , upload = require('express-fileupload')
+, os = require('os')
 ;
 
 var RedisStore = require('connect-redis')(session);
@@ -83,10 +84,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
-
-var os = require('os');
-
 var interfaces = os.networkInterfaces();
 var addresses = [];
 for (var k in interfaces) {
@@ -97,11 +94,11 @@ for (var k in interfaces) {
         }
     }
 }
-
-const port = 2001;
-
 console.log('- Network address: ' + chalk.cyan('http://' + addresses[0] + ':' + chalk.green(port) + '/'));
 
+const port = 81;
 app.listen(port, function() {
 	console.log('app listening on ' + chalk.green(port) + '...');
 })
+
+module.exports = app;
