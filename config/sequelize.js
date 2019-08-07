@@ -18,7 +18,7 @@ switch (app.get('env')) {
     $CURRENT_DATABASE = 'fromatoz_test';
     break;
   default: // this must be "production environment"
-    $CURRENT_DATABASE = 'fromatoz_development';
+    $CURRENT_DATABASE = 'fromatoz_dev';
     break;
 }
 exports.sequelize = new Sequelize($CURRENT_DATABASE, 'root', 'skdi_^&)98w8HGAS', {
