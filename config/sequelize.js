@@ -1,4 +1,5 @@
-const Sequelize = require('sequelize');
+const app = express()
+, Sequelize = require('sequelize')
 
 // Option 1: Passing parameters separately
 switch (app.get('env')) {
