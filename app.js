@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* Express-Session middleware */
 app.use(session({
-  store: new RedisStore(options),
+  store: new RedisStore(/*options*/),
   secret: 'sj*&8s7ydw3hedGUFYTDTD^r^%4^%$^&*TGKHTU^R76T*&TyYTYTutuTULILOoj(*&^*5$#$#)+_)(*&)', // the secret needs to be random unreadable characters.. check soon!!!!!
   resave: true,
   saveUninitialized: true,
