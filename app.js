@@ -10,7 +10,6 @@ const createError = require('http-errors')
 , upload = require('express-fileupload')
 ;
 
-var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 
 var siteRouter = require('./routes/site');
