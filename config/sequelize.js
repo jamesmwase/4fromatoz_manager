@@ -1,18 +1,18 @@
 const Sequelize = require('sequelize');
 
 // Option 1: Passing parameters separately
-switch (NODE_ENV) {
+switch (app.get('env')) {
   case 'production':
-    console.log(NODE_ENV);
+    console.log(app.get('env'));
     break;
   case 'development':
-    console.log(NODE_ENV);
+    console.log(app.get('env'));
     break;
   case 'test':
-    console.log(NODE_ENV);
+    console.log(app.get('env'));
     break;
   default:
-    console.log(NODE_ENV);
+    console.log(app.get('env'));
     break;
 }
 exports.sequelize = new Sequelize('fromatoz_root', 'root', 'skdi_^&)98w8HGAS', {
