@@ -38,7 +38,7 @@ exports.loginPOST = async function (req, res, next) {
 		// , include: [{ model: Contact, as: 'Contacts' }]
 	})
 	console.log(chalk.yellow(password.password));
-	if (bcrypt.compareSync(req.body.password, password.password)) {
+	if (bcrypt.compareSync(req.body.password, password.password) && userData.username === req.body.username) {
 		// asigning results to express session middleware
 		req.session.user = userData.dataValues;
     req.user = req.session.user;

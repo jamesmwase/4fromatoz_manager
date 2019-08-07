@@ -2,7 +2,7 @@ extends layout
 
 block content
   body.content
-    div#global-wrapper  
+    div#global-wrapper
       div#form-content
         form(method="POST" action="/login")
           p#err-message.has-background-danger.has-text-white(style="padding: 1px 10px; display: none;")
@@ -13,11 +13,19 @@ block content
               input.input.is-small(type="email" name="contact" placeholder="Email")
               span.icon.is-small.is-left
                 i.fas.fa-user
-              
+
               span.icon.is-small.is-right
                 i.fas.fa-check
-              
-          
+
+          div.field
+            p.control.has-icons-left.has-icons-right
+              input.input.is-small(type="text" name="username" placeholder="Username")
+              span.icon.is-small.is-left
+                i.fas.fa-user
+
+              span.icon.is-small.is-right
+                i.fas.fa-check
+
           div.field
             p.control.has-icons-left
               input.input.is-small(type="password" name="password" placeholder="Password")
