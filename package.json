@@ -1,6 +1,6 @@
 {
   "name": "4fromatoz_manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "App manager for 4fromatoz Blogging web app, topics include: IT, programming and many more.",
   "main": "app.js",
   "scripts": {
