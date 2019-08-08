@@ -22,7 +22,7 @@ switch (app.get('env')) {
     break;
 }
 exports.sequelize = new Sequelize($CURRENT_DATABASE, 'root', "qlodjaheisu3810394716%$Q*&@*!)(@)-==--=;:<>?.qwk/duquwd32ieu238s%^2", {
-  host: 'localhost',
+  host: '127.0.0.1',
   dialect: 'mysql'
 });
 console.log(chalk.yellow('CURRENT DATABASE NAME: ' + $CURRENT_DATABASE));
