@@ -33,6 +33,11 @@ const ConfirmAccount = sequelize.define('confirm_accounts', {
     , allowNull: false
     , defaultValue: new Date()
   }
+  , updatedAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
 });
 
 module.exports = ConfirmAccount;

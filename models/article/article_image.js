@@ -26,6 +26,16 @@ const ArticleImage = sequelize.define('article_images', {
     type: Sequelize.STRING
     , allowNull: false
   }
+  , createdAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
+  , updatedAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
 }
 , {
   timestamps: false

@@ -32,6 +32,11 @@ const ArticleInfos = sequelize.define('article_infos', {
     , allowNull: false
     , defaultValue: new Date()
   }
+  , updatedAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
 }
 , {
   timestamps: false

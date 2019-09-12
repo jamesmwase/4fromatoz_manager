@@ -23,6 +23,16 @@ const Contact = sequelize.define('contacts', {
   , role: {// role is for specifying if this should be a primary contact method
     type: Sequelize.STRING(10)
   }
+  , createdAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
+  , updatedAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
 }
 , {
   timestamps: false

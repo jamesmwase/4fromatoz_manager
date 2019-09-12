@@ -16,6 +16,16 @@ const Password = sequelize.define('passwords', {
     type: Sequelize.STRING(50)
     , allowNull: false
   }
+  , createdAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
+  , updatedAt: {
+    type: Sequelize.DATE
+    , allowNull: false
+    , defaultValue: new Date()
+  }
 }
 , {
   timestamps: false
