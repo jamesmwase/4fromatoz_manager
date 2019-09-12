@@ -11,7 +11,7 @@ const createError = require('http-errors')
 , os = require('os')
 ;
 
-var RedisStore = require('connect-redis')(session);
+const MongoStore = require('connect-mongo')(session);
 
 var siteRouter = require('./routes/site');
 
@@ -42,7 +42,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* Express-Session middleware */
 app.use(session({
-  store: new RedisStore(/*options*/),
+  store: new MongoStore({
+    host: '127.0.0.1',
+    port: '27017',
+    db: 'session',
+    url: 'mongodb://localhost:27017/demo'
+  }),
   secret: 'sj*&8s7ydw3hedGUFYTDTD^r^%4^%$^&*TGKHTU^R76T*&TyYTYTutuTULILOoj(*&^*5$#$#)+_)(*&)', // the secret needs to be random unreadable characters.. check soon!!!!!
   resave: true,
   saveUninitialized: true,

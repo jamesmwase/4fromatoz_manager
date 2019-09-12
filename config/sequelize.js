@@ -21,7 +21,7 @@ switch (app.get('env')) {
     $CURRENT_DATABASE = 'fromatoz_dev';
     break;
 }
-exports.sequelize = new Sequelize($CURRENT_DATABASE, 'root', "qlodjaheisu3810394716%$Q*&@*!)(@)-==--=;:<>?.qwk/duquwd32ieu238s%^2", {
+exports.sequelize = new Sequelize($CURRENT_DATABASE, 'root', "DFLKYWrttddr#@(&%^$);<>?/3208645", {
   host: '127.0.0.1',
   dialect: 'mysql'
 });

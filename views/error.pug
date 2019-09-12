@@ -4,4 +4,7 @@ block content
   if error.status === 404 || error.status === 500
     h2(style="color: darkorange;")= error.status + ', ' + message + ' error'
   else
-    h2(style="color: darkorange;")= '500, Internal Server error'
+    //h2(style="color: darkorange;")= '500, Internal Server error'
+    h1= error.status
+    h2= error.message
+    pre= error.stack

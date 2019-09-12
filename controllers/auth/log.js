@@ -1,22 +1,22 @@
 var S = require('string')
-, chalk = require('chalk')
-, bcrypt = require('bcryptjs')
-;
+	, chalk = require('chalk')
+	, bcrypt = require('bcryptjs')
+	;
 
 // models
 var User = require('../../models/user/user')
-, Contact = require('../../models/user/contact')
-, Password = require('../../models/user/password')
+	, Contact = require('../../models/user/contact')
+	, Password = require('../../models/user/password')
 
 
 // setting up relations
-User.hasMany(Contact, {as: 'Contacts', foreignKey: 'userId'})
-Contact.belongsTo(User, {as: 'User', foreignKey: 'userId'})
-User.hasMany(Password, {as: 'Passwords', foreignKey: 'userId'})
-Password.belongsTo(User, {as: 'User', foreignKey: 'userId'})
+User.hasMany(Contact, { as: 'Contacts', foreignKey: 'userId' })
+Contact.belongsTo(User, { as: 'User', foreignKey: 'userId' })
+User.hasMany(Password, { as: 'Passwords', foreignKey: 'userId' })
+Password.belongsTo(User, { as: 'User', foreignKey: 'userId' })
 
 exports.login = function (req, res, next) {
-  res.render('auth/login/index')
+	res.render('auth/login/index')
 }
 
 exports.loginPOST = async function (req, res, next) {
@@ -27,11 +27,11 @@ exports.loginPOST = async function (req, res, next) {
 	if (!contact) {
 		return res.status(200).json('wrong_credentials')
 	}
-  console.log(chalk.yellow(contact.dataValues));
+	console.log(chalk.yellow(contact.dataValues));
 
-  const password = await Password.findOne({
-    where: { userId: contact.dataValues.userId }
-  })
+	const password = await Password.findOne({
+		where: { userId: contact.dataValues.userId }
+	})
 
 	const userData = await User.findOne({
 		where: { id: contact.dataValues.userId }
@@ -41,7 +41,7 @@ exports.loginPOST = async function (req, res, next) {
 	if (bcrypt.compareSync(req.body.password, password.password) && userData.username === req.body.username) {
 		// asigning results to express session middleware
 		req.session.user = userData.dataValues;
-    req.user = req.session.user;
+		req.user = req.session.user;
 		console.log(req.user);
 		req.session.authenticated = true;
 		console.log(chalk.green(req.user));
@@ -52,6 +52,6 @@ exports.loginPOST = async function (req, res, next) {
 	}
 }
 exports.logout = function (req, res, next) {
-  req.session.authenticated = false;
-  res.redirect('/login')
+	req.session.authenticated = false;
+	res.redirect('/login')
 }
