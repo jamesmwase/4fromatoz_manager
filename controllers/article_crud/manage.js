@@ -114,7 +114,7 @@ exports.writeArticlePOST = async function (req, res, next) {
 			 */
 			const totalImages = await ArticleImage.count().catch(errHandler);
 			function imageUrl () {
-				let hostUrl = 'http://4fromatoz.com/uploads/image/';
+				let hostUrl = 'http://159.89.42.75:81/uploads/image/';
 				return hostUrl + totalImages + '.jpg';
 			}
 			let originalDir = './public/uploads/' + x() + '/' + fileName
