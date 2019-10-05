@@ -33,6 +33,11 @@ const Contact = sequelize.define('contacts', {
     , allowNull: false
     , defaultValue: new Date()
   }
+  , deleted: {
+    type: Sequelize.TINYINT
+    , allowNull: false
+    , defaultValue: 0
+  }
 }
 , {
   timestamps: false

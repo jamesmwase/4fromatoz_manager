@@ -33,6 +33,11 @@ const CommentReply = sequelize.define('comment_replies', {
     type: Sequelize.DATE
     , allowNull: false
   }
+  , deleted: {
+    type: Sequelize.TINYINT
+    , allowNull: false
+    , defaultValue: 0
+  }
 });
 
 module.exports = CommentReply;

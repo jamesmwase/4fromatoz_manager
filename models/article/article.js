@@ -64,6 +64,11 @@ const Article = sequelize.define('articles', {
     , allowNull: false
     , defaultValue: new Date()
   }
+  , deleted: {
+    type: Sequelize.TINYINT
+    , allowNull: false
+    , defaultValue: 0
+  }
 });
 
 module.exports = Article;

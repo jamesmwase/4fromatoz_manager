@@ -30,6 +30,11 @@ module.exports = {
         type: Sequelize.DATE
         , allowNull: false
       }
+      , deleted: {
+        type: Sequelize.TINYINT
+        , allowNull: false
+        , defaultValue: 0
+      }
     });
   },
 

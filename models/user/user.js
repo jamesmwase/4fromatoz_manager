@@ -44,6 +44,11 @@ const User = sequelize.define('users', {
     , allowNull: false
     , defaultValue: new Date()
   }
+  , deleted: {
+    type: Sequelize.TINYINT
+    , allowNull: false
+    , defaultValue: 0
+  }
 });
 
 module.exports = User;

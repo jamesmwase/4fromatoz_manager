@@ -32,6 +32,11 @@ const Comment = sequelize.define('comments', {
     type: Sequelize.DATE
     , allowNull: false
   }
+  , deleted: {
+    type: Sequelize.TINYINT
+    , allowNull: false
+    , defaultValue: 0
+  }
 });
 
 module.exports = Comment;

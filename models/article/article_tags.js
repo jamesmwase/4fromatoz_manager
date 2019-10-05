@@ -31,6 +31,11 @@ const ArticleTag = sequelize.define('article_tags', {
     , allowNull: false
     , defaultValue: new Date()
   }
+  , deleted: {
+    type: Sequelize.TINYINT
+    , allowNull: false
+    , defaultValue: 0
+  }
 });
 
 module.exports = ArticleTag;
