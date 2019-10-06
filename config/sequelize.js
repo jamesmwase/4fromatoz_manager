@@ -17,7 +17,7 @@ switch (app.get('env')) {
   case 'test':
     $CURRENT_DATABASE = 'fromatoz_test';
     break;
-  default: // this must be "production environment"
+  case 'development' // this must be "production environment"
     $CURRENT_DATABASE = 'fromatoz_dev';
     break;
 }
