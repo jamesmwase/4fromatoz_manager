@@ -11,14 +11,14 @@ const app = express();
 
 var $CURRENT_DATABASE = null;
 switch (app.get('env')) {
-  case 'production':
-    $CURRENT_DATABASE = 'fromatoz_root';
+  case 'development':
+    $CURRENT_DATABASE = 'fromatoz_dev';
     break;
   case 'test':
     $CURRENT_DATABASE = 'fromatoz_test';
     break;
-  case 'development' // this must be "production environment"
-    $CURRENT_DATABASE = 'fromatoz_dev';
+  default: // this must be "production environment"
+    $CURRENT_DATABASE = 'fromatoz_root';
     break;
 }
 exports.sequelize = new Sequelize($CURRENT_DATABASE, 'root', "DFLKYWrttddr#@(&%^$);<>?/3208645", {
