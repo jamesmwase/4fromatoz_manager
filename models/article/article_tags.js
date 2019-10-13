@@ -20,6 +20,7 @@ const ArticleTag = sequelize.define('article_tags', {
   }
   , tag: {
     type: Sequelize.STRING(100)
+    , unique: true
   }
   , createdAt: {
     type: Sequelize.DATE
