@@ -52,10 +52,10 @@ exports.writeArticlePOST = async function (req, res, next) {
 	var body, suspiciousTags, htmlTagMatching, tag_matches, attr_matches, i;
 	function cleanArticleBody () {
 		if (req.body.hasCode == 1) {
-			body = S(DOMPurify.sanitize(req.body.body)).escapeHTML().toString();
+			body = DOMPurify.sanitize(req.body.body);
 			return body;
 		} else {
-			body = S(DOMPurify.sanitize(req.body.body, {ALLOWED_TAGS: allowed_tags, KEEP_CONTENT: true})).escapeHTML().toString();
+			body = DOMPurify.sanitize(req.body.body, {ALLOWED_TAGS: allowed_tags, KEEP_CONTENT: true});
       		return body;
 		}
 	}
