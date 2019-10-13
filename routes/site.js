@@ -30,8 +30,8 @@ router.get('/logout', ensureAuthenticated, authLogController.logout);
 /**
  * Restriction needed when creating account.. needs attention asap!
  */
-// router.get('/create_account', authCreateController.create)
-// router.post('/create_account', authCreateController.createUserPOST)
+router.get('/create_account', authCreateController.create)
+router.post('/create_account', authCreateController.createUserPOST)
 
 // write article
 router.get('/articles/write', ensureAuthenticated, crudController.writeArticleGet)
