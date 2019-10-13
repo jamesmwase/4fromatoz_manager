@@ -63,7 +63,7 @@ exports.editPOST = async function (req, res, next) {
     where: { id: req.params.id }
   }).catch(errHandler)
 
-  if (tag && tagName !== tag.tag) {
+  if (tagName !== tag.tag) {
     const updateCategory = tag.update({
       tag: tagName
     }).catch(errHandler);

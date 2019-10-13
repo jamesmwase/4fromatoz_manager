@@ -75,13 +75,16 @@ exports.writeArticlePOST = async function (req, res, next) {
 	const article_infos = await ArticleInfos.create(articleContent).catch(errHandler);
 	console.log(chalk.yellow(article.body));
 	console.log(chalk.cyan(article_infos));
-	if (parseInt(articleContent.visible, 10) === 1) {
+
+	// get current environment
+	const CURRENT_ENVIRONMENT = app.get('env');
+	if (parseInt(articleContent.visible, 10) === 1 && CURRENT_ENVIRONMENT != 'production') {
 		/*
 		 * Send POST request of article's url to allfrombasic.com so it can be saved in sitemap.xml file
 		 */
 		const sendLink = await HTTP.post({
 			url: '/add_link_to_sitemap',
-			data: {url: 'http://www.4fromatoz.com/posts/'+articleContent.urlId},
+			data: {url: 'http://4fromatoz.com/posts/'+articleContent.urlId},
 			headers: {},
 			baseUrl: '4fromatoz.com',
 		}).catch(errHandler);
