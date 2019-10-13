@@ -1,9 +1,12 @@
 const S = require('string')
+, express = require('express')
 , chalk = require('chalk')
 , HTTP = require('machinepack-http')
 , Jimp = require('jimp')
 , fs = require('fs')
 ;
+
+const app = express();
 
 // models
 const User = require('../../models/user/user')
