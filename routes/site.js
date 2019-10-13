@@ -47,7 +47,7 @@ router.get('/articles/tags/list', ensureAuthenticated, tagsController.list);
 router.get('/articles/tags/add', ensureAuthenticated, tagsController.addTagGET);
 router.post('/articles/tags/add', ensureAuthenticated, tagsController.addTagPOST);
 router.get('/articles/tags/edit/:id', ensureAuthenticated, tagsController.editGET);
-router.post('/articles/tags/edit/:id', ensureAuthenticated, tagsController.editPOST);
+router.post('/articles/tag/edit/:id', ensureAuthenticated, tagsController.editPOST);
 router.get('/articles/tags/delete:id', ensureAuthenticated, tagsController.delete);
 
 router.get('/articles/category/list', ensureAuthenticated, categoriesController.list);
