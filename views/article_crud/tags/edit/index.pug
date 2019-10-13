@@ -6,7 +6,7 @@ block content
       div.column.is-2
         include ../../../common_features/menu.pug
       div#middle-content.column.is-7
-        form.section(method="POST" action="/articles/tag/edit/" + tag.id enctype="multipart/form-data")
+        form.section(method="POST" action="/articles/tags/edit/" + tag.id enctype="multipart/form-data")
           h1| Create new Category for article identification
           
           div(style="margin: .8rem auto;")
