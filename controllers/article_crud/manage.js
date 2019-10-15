@@ -89,7 +89,7 @@ exports.writeArticlePOST = async function (req, res, next) {
 			url: '/add_link_to_sitemap',
 			data: {url: 'http://4fromatoz.com/posts/'+articleContent.urlId},
 			headers: {},
-			baseUrl: '159.89.42.75:80',
+			baseUrl: '4fromatoz.com',
 		}).catch(errHandler);
 	}
 	if (req.files) {
