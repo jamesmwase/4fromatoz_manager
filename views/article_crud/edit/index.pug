@@ -16,11 +16,13 @@ block content
                 span.select.is-small
                   select(name="hasCode")
                     option(value="1")| contains computer code
-                    option(value="0")| has no computer code  
-                    div(style="margin: .8rem auto;")
+                    option(value="0")| has no computer code
+
+          div(style="margin: .8rem auto;")
             label.label| Article main title
             span.control
-              input.spell-check.input.is-small(name="title" required value= article.title)    
+              input.spell-check.input.is-small(name="title" required value= article.title)
+                
           div(style="margin: .8rem auto;")
             label.label.spell-check| article`s informative introduction text
             span.control
