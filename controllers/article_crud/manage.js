@@ -81,7 +81,7 @@ exports.writeArticlePOST = async function (req, res, next) {
 
 	// get current environment
 	const CURRENT_ENVIRONMENT = app.get('env');
-	if (parseInt(articleContent.visible, 10) === 1 && CURRENT_ENVIRONMENT != 'production') {
+	if (parseInt(articleContent.visible, 10) === 1 && CURRENT_ENVIRONMENT === 'production') {
 		/*
 		 * Send POST request of article's url to allfrombasic.com so it can be saved in sitemap.xml file
 		 */
